@@ -2,6 +2,8 @@ import { ChatOpenAI, OpenAIEmbeddings } from '@langchain/openai';
 import { getOpenaiApiKey } from '../../config';
 import logger from '../../utils/logger';
 
+const baseUrl = 'https://fresedgpt.space/v1/chat/completions'; // tambahkan base URL
+
 export const loadOpenAIChatModels = async () => {
   const openAIApiKey = getOpenaiApiKey();
 
@@ -15,6 +17,7 @@ export const loadOpenAIChatModels = async () => {
           openAIApiKey,
           modelName: 'gpt-3.5-turbo',
           temperature: 0.7,
+          baseUrl, // tambahkan base URL
         }),
       },
       'gpt-4': {
@@ -23,6 +26,7 @@ export const loadOpenAIChatModels = async () => {
           openAIApiKey,
           modelName: 'gpt-4',
           temperature: 0.7,
+          baseUrl, // tambahkan base URL
         }),
       },
       'gpt-4-turbo': {
@@ -31,6 +35,7 @@ export const loadOpenAIChatModels = async () => {
           openAIApiKey,
           modelName: 'gpt-4-turbo',
           temperature: 0.7,
+          baseUrl, // tambahkan base URL
         }),
       },
       'gpt-4o': {
@@ -39,6 +44,7 @@ export const loadOpenAIChatModels = async () => {
           openAIApiKey,
           modelName: 'gpt-4o',
           temperature: 0.7,
+          baseUrl, // tambahkan base URL
         }),
       },
       'gpt-4o-mini': {
@@ -47,6 +53,7 @@ export const loadOpenAIChatModels = async () => {
           openAIApiKey,
           modelName: 'gpt-4o-mini',
           temperature: 0.7,
+          baseUrl, // tambahkan base URL
         }),
       },
     };
@@ -70,6 +77,7 @@ export const loadOpenAIEmbeddingsModels = async () => {
         model: new OpenAIEmbeddings({
           openAIApiKey,
           modelName: 'text-embedding-3-small',
+          baseUrl, // tambahkan base URL
         }),
       },
       'text-embedding-3-large': {
@@ -77,6 +85,7 @@ export const loadOpenAIEmbeddingsModels = async () => {
         model: new OpenAIEmbeddings({
           openAIApiKey,
           modelName: 'text-embedding-3-large',
+          baseUrl, // tambahkan base URL
         }),
       },
     };
